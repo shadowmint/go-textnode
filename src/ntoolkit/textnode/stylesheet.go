@@ -2,10 +2,10 @@ package textnode
 
 const (
 	Normal = 0
-	Underline = 1 >> 0
-	Bold = 1 >> 1
-	Italic = 1 >> 2
-	StrikeThrough = 1 >> 3
+	Underline = 1 << 0
+	Bold = 1 << 1
+	Italic = 1 << 2
+	StrikeThrough = 1 << 3
 )
 
 // Standard colors
