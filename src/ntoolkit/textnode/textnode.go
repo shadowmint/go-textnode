@@ -67,7 +67,6 @@ func (n *TextNode) Style(locale string, id string, value string) error {
 func (n *TextNode) Constraint(id string, statusId string, statusType int, threshold float32) {
 	node := n.getNode(id)
 	node.Constraints[statusId] = Constraint{
-		Id: statusId,
 		Type: statusType,
 		Threshold: threshold}
 }
@@ -78,8 +77,8 @@ func (n *TextNode) Resolve(env *Env) (*Text, error) {
 	var target *textNodeEntry = nil
 	for _, v := range n.nodes {
 		matches := true
-		for _, constraint := range v.Constraints {
-			if !constraint.Meets(env) {
+		for id, constraint := range v.Constraints {
+			if !constraint.Meets(id, env) {
 				matches = false
 				break
 			}

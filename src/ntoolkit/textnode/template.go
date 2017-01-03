@@ -3,7 +3,6 @@ package textnode
 import (
 	"encoding/json"
 	"strings"
-	"golang.org/x/text/language"
 	"bytes"
 )
 
@@ -19,7 +18,6 @@ type TextTemplateEntry struct {
 }
 
 type TextConstraintTemplate struct {
-	Id        string
 	Type      string
 	Threshold float32
 }
@@ -49,7 +47,6 @@ func TextTemplateFromTextNode(text *TextNode) (*TextTemplate, error) {
 		}
 		for nk, nv := range v.Constraints {
 			rtn.Nodes[k].Constraints[nk] = TextConstraintTemplate{
-				Id: nv.Id,
 				Type: constraintValueAsKey(nv.Type),
 				Threshold: nv.Threshold}
 		}
@@ -66,18 +63,13 @@ func (t *TextTemplate) AsNode() *TextNode {
 	for k, v := range t.Nodes {
 		rtn.nodes[k] = rtn.getNode(k)
 		for nk, nv := range v.Values {
-			tag := language.Make(nk)
-			rtn.nodes[k].Values[tag] = nv
+			rtn.Text(nk, k, nv)
 		}
 		for nk, nv := range v.Styles {
-			tag := language.Make(nk)
-			rtn.nodes[k].Styles[tag] = nv
+			rtn.Style(nk, k, nv)
 		}
 		for nk, nv := range v.Constraints {
-			rtn.nodes[k].Constraints[nk] = Constraint{
-				Id: nv.Id,
-				Type: constraintKeyAsValue(nv.Type),
-				Threshold: nv.Threshold}
+			rtn.Constraint(k, nk, constraintKeyAsValue(nv.Type), nv.Threshold)
 		}
 	}
 	for k, v := range t.Styles {
