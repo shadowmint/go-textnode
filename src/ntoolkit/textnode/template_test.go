@@ -115,3 +115,56 @@ func TestTemplateFromJson(T *testing.T) {
 		T.Assert(en2.Value == "dark")
 	});
 }
+
+
+func TestPartialTemplateFromJson(T *testing.T) {
+	assert.Test(T, func(T *assert.T) {
+		json := `{
+			"Nodes": {
+				"description": {
+					"Value": "light",
+					"Constraints": {
+						"light": {
+							"Type": "\u003e=",
+							"Threshold": 0.5
+						}
+					}
+				},
+				"description.dark": {
+					"Style": "    ",
+					"Constraints": {
+						"light": {
+							"Type": "\u003c",
+							"Threshold": 0.5
+						}
+					}
+				}
+			},
+			"Styles": {
+				" ": "Normal"
+			}
+		}`;
+
+		template, err := textnode.TextTemplateFromJson(json)
+		T.Assert(err == nil)
+		T.Assert(template != nil)
+
+		node2 := template.AsNode()
+		T.Assert(node2 != nil)
+
+		status := textnode.NewStatus()
+		env := textnode.NewEnv(status)
+
+		status.Values["light"] = 1.0
+		en1, err1 := node2.Resolve(env)
+
+		status.Values["light"] = 0.0
+		en2, err2 := node2.Resolve(env)
+
+		T.Assert(err1 == nil)
+		T.Assert(err2 == nil)
+
+		T.Assert(en1.Value == "light")
+		T.Assert(en2.Value == "    ")
+	});
+}

@@ -55,8 +55,12 @@ func TextTemplateFromTextNode(text *TextNode) (*TextTemplate, error) {
 func (t *TextTemplate) AsNode() *TextNode {
 	rtn := NewTextNode()
 	for k, v := range t.Nodes {
-		rtn.Text(k, v.Value)
-		rtn.Style(k, v.Style)
+		if len(v.Value) > 0 {
+			rtn.Text(k, v.Value)
+		}
+		if len(v.Style) > 0 {
+			rtn.Style(k, v.Style)
+		}
 		for nk, nv := range v.Constraints {
 			rtn.Constraint(k, nk, constraintKeyAsValue(nv.Type), nv.Threshold)
 		}
