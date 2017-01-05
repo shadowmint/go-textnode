@@ -26,7 +26,6 @@
     "go-assert": "github:shadowmint/go-assert",
     "go-errors": "github:shadowmint/go-errors",
     "go-iter": "github:shadowmint/go-iter",
-    "go-x-text": "github:shadowmint/go-x-text#1.0.0",
     "mkdirp": "^0.5.1",
     "ncp": "^2.0.0"
   }
