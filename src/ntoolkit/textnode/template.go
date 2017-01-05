@@ -12,8 +12,8 @@ type TextTemplate struct {
 }
 
 type TextTemplateEntry struct {
-	Values      map[string]string
-	Styles      map[string]string
+	Value       string
+	Style       string
 	Constraints map[string]TextConstraintTemplate
 }
 
@@ -36,15 +36,9 @@ func TextTemplateFromTextNode(text *TextNode) (*TextTemplate, error) {
 	rtn := TextTemplate{Nodes: make(map[string]TextTemplateEntry)}
 	for k, v := range text.nodes {
 		rtn.Nodes[k] = TextTemplateEntry{
-			Values: make(map[string]string),
-			Styles: make(map[string]string),
+			Value: v.Value,
+			Style: v.Style,
 			Constraints: make(map[string]TextConstraintTemplate)}
-		for nk, nv := range v.Values {
-			rtn.Nodes[k].Values[nk.String()] = nv
-		}
-		for nk, nv := range v.Styles {
-			rtn.Nodes[k].Styles[nk.String()] = nv
-		}
 		for nk, nv := range v.Constraints {
 			rtn.Nodes[k].Constraints[nk] = TextConstraintTemplate{
 				Type: constraintValueAsKey(nv.Type),
@@ -61,13 +55,8 @@ func TextTemplateFromTextNode(text *TextNode) (*TextTemplate, error) {
 func (t *TextTemplate) AsNode() *TextNode {
 	rtn := NewTextNode()
 	for k, v := range t.Nodes {
-		rtn.nodes[k] = rtn.getNode(k)
-		for nk, nv := range v.Values {
-			rtn.Text(nk, k, nv)
-		}
-		for nk, nv := range v.Styles {
-			rtn.Style(nk, k, nv)
-		}
+		rtn.Text(k, v.Value)
+		rtn.Style(k, v.Style)
 		for nk, nv := range v.Constraints {
 			rtn.Constraint(k, nk, constraintKeyAsValue(nv.Type), nv.Threshold)
 		}

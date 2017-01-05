@@ -2,13 +2,14 @@ package textnode
 
 // Constraint in a condition to use to resolve what text node to render for an object.
 type Constraint struct {
+	Id        string
 	Type      int
 	Threshold float32
 }
 
 // Meets checks if the constraint meets the given env restrictions
-func (c *Constraint) Meets(id string, env *Env) bool {
-	value, ok := env.Status.Values[id]
+func (c *Constraint) Meets(env *Env) bool {
+	value, ok := env.Status.Values[c.Id]
 	rtn := false
 	if ok {
 		switch c.Type {

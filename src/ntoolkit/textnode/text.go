@@ -5,8 +5,6 @@ import (
 	"ntoolkit/errors"
 	"fmt"
 	"unicode/utf8"
-	"text/template"
-	"bytes"
 )
 
 // Text is the lowest level representation of a string that the core can return.
@@ -70,25 +68,4 @@ func (t *Text) Render(renderer TokenRenderer) (string, error) {
 	}
 
 	return combined, nil
-}
-
-// Render a text stream using a TokenRenderer and render the result as a standard template
-func (t *Text) RenderTemplate(properties interface{}, renderer TokenRenderer) (string, error) {
-	result, err := t.Render(renderer)
-	if err != nil {
-		return "", err
-	}
-
-	template, err := template.New("token-template").Parse(result)
-	if err != nil {
-		return "", err
-	}
-
-	buffer := bytes.NewBuffer(make([]byte, 0))
-	err = template.Execute(buffer, properties)
-	if err != nil {
-		return "", err
-	}
-
-	return string(buffer.Bytes()), nil
 }
