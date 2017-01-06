@@ -27,6 +27,15 @@ func NewTextNode() *TextNode {
 		Styles: make(map[rune]string)}
 }
 
+// Keys returns the set of defined keys for this node
+func (n *TextNode) Keys() []string {
+  rtn := make([]string, 0)
+  for k, _ := range n.nodes {
+    rtn = append(rtn, k)
+  }
+  return rtn
+}
+
 // Text sets a text entry for this node
 func (n *TextNode) Text(id string, value string) error {
 	node := n.getNode(id)

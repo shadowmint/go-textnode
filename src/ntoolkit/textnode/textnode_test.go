@@ -133,3 +133,17 @@ func TestStyledTextNodeMissingStyle(T *testing.T) {
 		T.Assert(en1.Styles[10] == s2)
 	})
 }
+
+func TestKeys(T *testing.T) {
+	assert.Test(T, func(T *assert.T) {
+		node := textnode.NewTextNode()
+		node.Text("description1",  "Hello World")
+		node.Text("description2",  "Hello World")
+		node.Text("description3",  "Hello World")
+		node.Text("description4",  "Hello World")
+		node.Text("description5",  "Hello World")
+    keys := node.Keys()
+
+    T.Assert(len(keys) == 5)
+	})
+}
