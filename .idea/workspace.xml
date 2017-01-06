@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3a9bdf63-47ab-4fba-afa9-c6a0a8eb5ac6" name="Default" comment="" />
+    <list default="true" id="3a9bdf63-47ab-4fba-afa9-c6a0a8eb5ac6" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ntoolkit/textnode/textnode.go" afterPath="$PROJECT_DIR$/src/ntoolkit/textnode/textnode.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ntoolkit/textnode/textnode_test.go" afterPath="$PROJECT_DIR$/src/ntoolkit/textnode/textnode_test.go" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,7 +25,7 @@
       <file leaf-file-name="text.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ntoolkit/textnode/text.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1050">
+            <state relative-caret-position="975">
               <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
               <folding>
                 <element signature="e#18#87#0" expanded="true" />
@@ -30,21 +34,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="template.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="template.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ntoolkit/textnode/template.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-75">
+            <state relative-caret-position="15">
               <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="textnode_test.go" pinned="false" current-in-tab="false">
+      <file leaf-file-name="textnode_test.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ntoolkit/textnode/textnode_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="89" column="40" lean-forward="false" selection-start-line="89" selection-start-column="40" selection-end-line="89" selection-end-column="40" />
+            <state relative-caret-position="749">
+              <caret line="74" column="27" lean-forward="false" selection-start-line="74" selection-start-column="27" selection-end-line="74" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -53,7 +57,7 @@
       <file leaf-file-name="template_test.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ntoolkit/textnode/template_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-735">
+            <state relative-caret-position="90">
               <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
@@ -67,7 +71,6 @@
               <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding>
                 <marker date="1483542366000" expanded="true" signature="128:131" ph="{...}" />
-                <marker date="1483542366000" expanded="true" signature="331:683" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -76,13 +79,10 @@
       <file leaf-file-name="textnode.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ntoolkit/textnode/textnode.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="870">
-              <caret line="59" column="19" lean-forward="false" selection-start-line="59" selection-start-column="19" selection-end-line="59" selection-end-column="19" />
+            <state relative-caret-position="1007">
+              <caret line="99" column="17" lean-forward="false" selection-start-line="99" selection-start-column="17" selection-end-line="99" selection-end-column="17" />
               <folding>
-                <marker date="1483542366000" expanded="false" signature="25:29" ph="..." />
-                <marker date="1483542366000" expanded="true" signature="2204:2250" ph="{...}" />
-                <marker date="1483542366000" expanded="true" signature="2204:2274" ph="{...}" />
-                <marker date="1483542366000" expanded="true" signature="2204:2289" ph="{...}" />
+                <marker date="1483700795000" expanded="false" signature="25:29" ph="..." />
               </folding>
             </state>
           </provider>
@@ -148,10 +148,10 @@
         <option value="$PROJECT_DIR$/src/ntoolkit/textnode/stylesheet.go" />
         <option value="$PROJECT_DIR$/src/ntoolkit/textnode/text_renderer_test.go" />
         <option value="$PROJECT_DIR$/src/ntoolkit/textnode/constraint.go" />
-        <option value="$PROJECT_DIR$/src/ntoolkit/textnode/textnode.go" />
-        <option value="$PROJECT_DIR$/src/ntoolkit/textnode/textnode_test.go" />
         <option value="$PROJECT_DIR$/src/ntoolkit/textnode/template.go" />
         <option value="$PROJECT_DIR$/src/ntoolkit/textnode/template_test.go" />
+        <option value="$PROJECT_DIR$/src/ntoolkit/textnode/textnode.go" />
+        <option value="$PROJECT_DIR$/src/ntoolkit/textnode/textnode_test.go" />
       </list>
     </option>
   </component>
@@ -165,10 +165,9 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="556" />
-    <option name="y" value="222" />
+    <option name="y" value="23" />
     <option name="width" value="2560" />
-    <option name="height" value="1130" />
+    <option name="height" value="1337" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -188,6 +187,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -240,7 +240,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -726,16 +725,11 @@
       <workItem from="1483443873791" duration="511000" />
       <workItem from="1483450402432" duration="4199000" />
       <workItem from="1483615771018" duration="2665000" />
+      <workItem from="1483700447589" duration="411000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unnamed - 2017.01.05 at 21h 49m 36s.xml">
-      <configuration name="Unnamed" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="Unnamed - 2017.01.05 at 21h 50m 12s.xml">
-      <configuration name="Unnamed" configurationId="GoTestRunConfiguration" />
-    </history-entry>
     <history-entry file="Unnamed - 2017.01.05 at 22h 13m 49s.xml">
       <configuration name="Unnamed" configurationId="GoTestRunConfiguration" />
     </history-entry>
@@ -760,12 +754,18 @@
     <history-entry file="Unnamed - 2017.01.05 at 22h 33m 18s.xml">
       <configuration name="Unnamed" configurationId="GoTestRunConfiguration" />
     </history-entry>
+    <history-entry file="Unnamed - 2017.01.06 at 19h 06m 35s.xml">
+      <configuration name="Unnamed" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="Unnamed - 2017.01.06 at 19h 07m 35s.xml">
+      <configuration name="Unnamed" configurationId="GoTestRunConfiguration" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15239000" />
+    <option name="totallyTimeSpent" value="15650000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="556" y="222" width="2560" height="1130" extended-state="0" />
+    <frame x="0" y="23" width="2560" height="1337" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -777,21 +777,21 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="REPL" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32771084" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32771084" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Leiningen" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13939634" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14019063" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24980143" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -859,14 +859,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ntoolkit/textnode/text_renderer_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ntoolkit/textnode/text_renderer_test.go" />
     <entry file="file://$PROJECT_DIR$/src/ntoolkit/textnode/template.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -897,7 +890,6 @@
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
             <marker date="1483542366000" expanded="true" signature="128:131" ph="{...}" />
-            <marker date="1483542366000" expanded="true" signature="331:683" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -907,10 +899,7 @@
         <state relative-caret-position="1110">
           <caret line="80" column="31" lean-forward="false" selection-start-line="80" selection-start-column="31" selection-end-line="80" selection-end-column="31" />
           <folding>
-            <marker date="1483542366000" expanded="false" signature="25:29" ph="..." />
-            <marker date="1483542366000" expanded="true" signature="2204:2250" ph="{...}" />
-            <marker date="1483542366000" expanded="true" signature="2204:2274" ph="{...}" />
-            <marker date="1483542366000" expanded="true" signature="2204:2289" ph="{...}" />
+            <marker date="1483700795000" expanded="false" signature="25:29" ph="..." />
           </folding>
         </state>
       </provider>
@@ -951,14 +940,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ntoolkit/textnode/text_renderer_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ntoolkit/textnode/text_renderer_test.go" />
     <entry file="file://$PROJECT_DIR$/src/ntoolkit/textnode/template.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1050">
@@ -989,7 +971,6 @@
           <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
           <folding>
             <marker date="1483542366000" expanded="true" signature="128:131" ph="{...}" />
-            <marker date="1483542366000" expanded="true" signature="331:683" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -999,10 +980,7 @@
         <state relative-caret-position="900">
           <caret line="66" column="19" lean-forward="false" selection-start-line="66" selection-start-column="19" selection-end-line="66" selection-end-column="19" />
           <folding>
-            <marker date="1483542366000" expanded="false" signature="25:29" ph="..." />
-            <marker date="1483542366000" expanded="true" signature="2204:2250" ph="{...}" />
-            <marker date="1483542366000" expanded="true" signature="2204:2274" ph="{...}" />
-            <marker date="1483542366000" expanded="true" signature="2204:2289" ph="{...}" />
+            <marker date="1483700795000" expanded="false" signature="25:29" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1043,14 +1021,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ntoolkit/textnode/text_renderer_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ntoolkit/textnode/text_renderer_test.go" />
     <entry file="file://$PROJECT_DIR$/src/ntoolkit/textnode/template.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1081,7 +1052,6 @@
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="7" selection-end-column="1" />
           <folding>
             <marker date="1483542366000" expanded="true" signature="128:131" ph="{...}" />
-            <marker date="1483542366000" expanded="true" signature="331:683" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1091,10 +1061,7 @@
         <state relative-caret-position="735">
           <caret line="55" column="26" lean-forward="false" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
           <folding>
-            <marker date="1483542366000" expanded="false" signature="25:29" ph="..." />
-            <marker date="1483542366000" expanded="true" signature="2204:2250" ph="{...}" />
-            <marker date="1483542366000" expanded="true" signature="2204:2274" ph="{...}" />
-            <marker date="1483542366000" expanded="true" signature="2204:2289" ph="{...}" />
+            <marker date="1483700795000" expanded="false" signature="25:29" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1135,14 +1102,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ntoolkit/textnode/text_renderer_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ntoolkit/textnode/text_renderer_test.go" />
     <entry file="file://$PROJECT_DIR$/src/ntoolkit/textnode/textnode_test.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
@@ -1209,29 +1169,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ntoolkit/textnode/text_renderer_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ntoolkit/textnode/text_renderer_test.go" />
     <entry file="file://$PROJECT_DIR$/src/ntoolkit/textnode/text.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1050">
+        <state relative-caret-position="975">
           <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
           <folding>
             <element signature="e#18#87#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ntoolkit/textnode/textnode_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="89" column="40" lean-forward="false" selection-start-line="89" selection-start-column="40" selection-end-line="89" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1241,20 +1186,6 @@
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
             <marker date="1483542366000" expanded="true" signature="128:131" ph="{...}" />
-            <marker date="1483542366000" expanded="true" signature="331:683" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ntoolkit/textnode/textnode.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="59" column="19" lean-forward="false" selection-start-line="59" selection-start-column="19" selection-end-line="59" selection-end-column="19" />
-          <folding>
-            <marker date="1483542366000" expanded="false" signature="25:29" ph="..." />
-            <marker date="1483542366000" expanded="true" signature="2204:2250" ph="{...}" />
-            <marker date="1483542366000" expanded="true" signature="2204:2274" ph="{...}" />
-            <marker date="1483542366000" expanded="true" signature="2204:2289" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1287,7 +1218,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ntoolkit/textnode/template_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-735">
+        <state relative-caret-position="90">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
@@ -1295,8 +1226,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ntoolkit/textnode/template.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-75">
+        <state relative-caret-position="15">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ntoolkit/textnode/textnode.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1007">
+          <caret line="99" column="17" lean-forward="false" selection-start-line="99" selection-start-column="17" selection-end-line="99" selection-end-column="17" />
+          <folding>
+            <marker date="1483700795000" expanded="false" signature="25:29" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ntoolkit/textnode/textnode_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="749">
+          <caret line="74" column="27" lean-forward="false" selection-start-line="74" selection-start-column="27" selection-end-line="74" selection-end-column="27" />
           <folding />
         </state>
       </provider>

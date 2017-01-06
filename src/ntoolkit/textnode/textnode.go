@@ -66,10 +66,12 @@ func (n *TextNode) Constraint(id string, statusId string, statusType int, thresh
 }
 
 // Resolve the text representation of this node
-func (n *TextNode) Resolve(env *Env) (*Text, error) {
+// If prefix is supplied, we prefer to resolve the node with an item in the prefix list.
+func (n *TextNode) Resolve(env *Env, prefix ...string) (*Text, error) {
 	// Find the first target that matches the given env
 	var target *textNodeEntry = nil
-	for _, v := range n.nodes {
+
+	for k, v := range n.nodes {
 		matches := true
 		for _, constraint := range v.Constraints {
 			if !constraint.Meets(env) {
@@ -79,7 +81,9 @@ func (n *TextNode) Resolve(env *Env) (*Text, error) {
 		}
 		if matches {
 			target = v
-			break
+			if n.matchesPrefix(k, prefix...) {
+				break
+			}
 		}
 	}
 	if target == nil {
@@ -87,6 +91,16 @@ func (n *TextNode) Resolve(env *Env) (*Text, error) {
 	}
 
 	return newText(target.Value, target.Style, n.Styles, env), nil
+}
+
+// Check if a key matches a prefix
+func (n *TextNode) matchesPrefix(key string, prefix ...string) bool {
+	for i := 0; i < len(prefix); i++ {
+		if strings.HasPrefix(key, prefix[i]) {
+			return true
+		}
+	}
+	return false
 }
 
 // getNode returns the entry record for the given id

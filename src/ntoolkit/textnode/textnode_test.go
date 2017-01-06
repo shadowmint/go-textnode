@@ -34,6 +34,50 @@ func TestSimpleTextNode(T *testing.T) {
 	})
 }
 
+func TestTextPrefixResolveNode(T *testing.T) {
+	assert.Test(T, func(T *assert.T) {
+		node := textnode.NewTextNode()
+
+		node.Text("description", "light")
+		node.Constraint("description", "light", textnode.GreaterThanEq, 0.5)
+
+		node.Text("description.dark", "dark")
+		node.Constraint("description.dark", "light", textnode.LessThan, 0.5)
+
+		node.Text("name", "name.light")
+		node.Constraint("name", "light", textnode.GreaterThanEq, 0.5)
+
+		node.Text("name.dark", "name.dark")
+		node.Constraint("name.dark", "light", textnode.LessThan, 0.5)
+
+		status := textnode.NewStatus()
+		env := textnode.NewEnv(status)
+
+		status.Values["light"] = 1.0
+		en1, err1 := node.Resolve(env, "foo", "name")
+
+		status.Values["light"] = 0.0
+		en2, err2 := node.Resolve(env, "name")
+
+		status.Values["light"] = 1.0
+		en3, err3 := node.Resolve(env, "foo", "description")
+
+		status.Values["light"] = 0.0
+		en4, err4 := node.Resolve(env, "description")
+
+		T.Assert(err1 == nil)
+		T.Assert(err2 == nil)
+		T.Assert(err3 == nil)
+		T.Assert(err4 == nil)
+
+		T.Assert(en1.Value == "name.light")
+		T.Assert(en2.Value == "name.dark")
+		T.Assert(en3.Value == "light")
+		T.Assert(en4.Value == "dark")
+
+	})
+}
+
 func TestStyledTextNode(T *testing.T) {
 	assert.Test(T, func(T *assert.T) {
 		node := textnode.NewTextNode()
