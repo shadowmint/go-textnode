@@ -21,16 +21,16 @@ type TextToken struct {
 }
 
 // newText returns a new Text object for the given values
-func newText(text string, style string, styleMap map[rune]string, env *Env) *Text {
+func newText(text string, style string, styleMap map[rune]string, stylesheet *StyleSheet) *Text {
 	styleCount := utf8.RuneCountInString(style)
 	rtn := Text{Value: text, Styles: make([]*Style, styleCount), Errors: make([]error, 0)}
 	styleRunes := []rune(style)
 	for i := 0; i < styleCount; i++ {
-		rtn.Styles[i] = &env.Stylesheet.Default
+		rtn.Styles[i] = &stylesheet.Default
 		if styleId, ok := styleMap[styleRunes[i]]; ok {
-			rtn.Styles[i] = env.Stylesheet.Get(styleId)
+			rtn.Styles[i] = stylesheet.Get(styleId)
 			if rtn.Styles[i] == nil {
-				rtn.Styles[i] = &env.Stylesheet.Default
+				rtn.Styles[i] = &stylesheet.Default
 				rtn.Errors = append(rtn.Errors, errors.Fail(ErrBadStyles{}, nil, fmt.Sprintf("No entry in style sheet for style id '%s'", styleId)))
 			}
 		} else {

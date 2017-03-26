@@ -17,23 +17,22 @@ type TextNode struct {
 type textNodeEntry struct {
 	Value string
 	Style string
-	Constraints map[string]Constraint
 }
 
 // NewTextNode returns a new TextNode
 func NewTextNode() *TextNode {
 	return &TextNode{
-		nodes: make(map[string]*textNodeEntry),
+		nodes:  make(map[string]*textNodeEntry),
 		Styles: make(map[rune]string)}
 }
 
 // Keys returns the set of defined keys for this node
 func (n *TextNode) Keys() []string {
-  rtn := make([]string, 0)
-  for k, _ := range n.nodes {
-    rtn = append(rtn, k)
-  }
-  return rtn
+	rtn := make([]string, 0)
+	for k, _ := range n.nodes {
+		rtn = append(rtn, k)
+	}
+	return rtn
 }
 
 // Text sets a text entry for this node
@@ -56,41 +55,21 @@ func (n *TextNode) Style(id string, value string) error {
 	return nil
 }
 
-// Constraint adds a constraint for a given text entry
-func (n *TextNode) Constraint(id string, statusId string, statusType int, threshold float32) {
-	node := n.getNode(id)
-	node.Constraints[statusId] = Constraint{
-		Id: statusId,
-		Type: statusType,
-		Threshold: threshold}
-}
-
-// Resolve the text representation of this node
+// Resolve the text representation of this node.
 // If prefix is supplied, we prefer to resolve the node with an item in the prefix list.
-func (n *TextNode) Resolve(env *Env, prefix ...string) (*Text, error) {
-	// Find the first target that matches the given env
+func (n *TextNode) Resolve(stylesheet *StyleSheet, prefix ...string) (*Text, error) {
 	var target *textNodeEntry = nil
-
 	for k, v := range n.nodes {
-		matches := true
-		for _, constraint := range v.Constraints {
-			if !constraint.Meets(env) {
-				matches = false
-				break
-			}
-		}
-		if matches {
-			target = v
-			if n.matchesPrefix(k, prefix...) {
-				break
-			}
+		target = v
+		if n.matchesPrefix(k, prefix...) {
+			break
 		}
 	}
 	if target == nil {
 		return nil, errors.Fail(ErrNoText{}, nil, "No text entry for the given constraints")
 	}
 
-	return newText(target.Value, target.Style, n.Styles, env), nil
+	return newText(target.Value, target.Style, n.Styles, stylesheet), nil
 }
 
 // Check if a key matches a prefix
@@ -109,8 +88,7 @@ func (n *TextNode) getNode(id string) *textNodeEntry {
 	if !found {
 		n.nodes[id] = &textNodeEntry{
 			Value: "",
-			Style: "",
-			Constraints: make(map[string]Constraint)}
+			Style: ""}
 		node = n.nodes[id]
 	}
 	return node
