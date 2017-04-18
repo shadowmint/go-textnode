@@ -11,11 +11,11 @@ func TestSimpleTextNode(T *testing.T) {
 	assert.Test(T, func(T *assert.T) {
 		node := textnode.NewTextNode()
 
-		node.Text("description", "light")
+		node.Text("description.light", "light")
 		node.Text("description.dark", "dark")
 
 		styles := textnode.NewStyleSheet()
-		en1, err1 := node.Resolve(styles, "description")
+		en1, err1 := node.Resolve(styles, "description.light")
 		en2, err2 := node.Resolve(styles, "description.dark")
 
 		T.Assert(err1 == nil)

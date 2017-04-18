@@ -14,12 +14,6 @@ type TextTemplate struct {
 type TextTemplateEntry struct {
 	Value       string
 	Style       string
-	Constraints map[string]TextConstraintTemplate
-}
-
-type TextConstraintTemplate struct {
-	Type      string
-	Threshold float32
 }
 
 func TextTemplateFromJson(raw string) (*TextTemplate, error) {
