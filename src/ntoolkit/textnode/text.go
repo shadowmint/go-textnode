@@ -25,6 +25,11 @@ func (t *Text) Import(values map[string]string) {
 	}
 }
 
+// Export returns the internal raw string mappings
+func (t *Text) Export() map[string]string {
+  return t.literals
+}
+
 // Resolve returns the renderer string for the given key.
 // If a classifier is provided it is used.
 func (t *Text) Resolve(name string, renderer Renderer, classifier ...parser.Classifier) (string, error) {
