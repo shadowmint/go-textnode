@@ -1,71 +1,71 @@
 package textnode
 
 import (
-	"ntoolkit/iter"
 	"ntoolkit/errors"
 	"fmt"
-	"unicode/utf8"
+	"ntoolkit/parser"
+	"sync"
 )
 
-// Text is the lowest level representation of a string that the core can return.
 type Text struct {
-	Value  string
-	Styles []*Style
-	Errors []error
+	literals  map[string]string // Literals is the set of normal key nodes
+	tokenizer parser.Tokenizer
 }
 
-// TextToken is a single continuous stream of runes with the same style applied to them.
-type TextToken struct {
-	Value string
-	Style *Style
+// New returns a new Text instance
+func New() *Text {
+	return &Text{literals: make(map[string]string)}
 }
 
-// newText returns a new Text object for the given values
-func newText(text string, style string, styleMap map[rune]string, stylesheet *StyleSheet) *Text {
-	styleCount := utf8.RuneCountInString(style)
-	rtn := Text{Value: text, Styles: make([]*Style, styleCount), Errors: make([]error, 0)}
-	styleRunes := []rune(style)
-	for i := 0; i < styleCount; i++ {
-		rtn.Styles[i] = &stylesheet.Default
-		if styleId, ok := styleMap[styleRunes[i]]; ok {
-			rtn.Styles[i] = stylesheet.Get(styleId)
-			if rtn.Styles[i] == nil {
-				rtn.Styles[i] = &stylesheet.Default
-				rtn.Errors = append(rtn.Errors, errors.Fail(ErrBadStyles{}, nil, fmt.Sprintf("No entry in style sheet for style id '%s'", styleId)))
-			}
-		} else {
-			// Always allow ' ' as empty padding
-			if styleRunes[i] != ' ' {
-				rtn.Errors = append(rtn.Errors, errors.Fail(ErrBadStyles{}, nil, fmt.Sprintf("No entry in style map for rune '%c'", styleRunes[i])))
-			}
-		}
+// Import takes a map and imports the raw values into the text object.
+// Newly imported values take precedence.
+func (t *Text) Import(values map[string]string) {
+	for key := range values {
+		t.literals[key] = values[key]
 	}
-	return &rtn
 }
 
-// Tokens returns a text object as an iterator of TextTokens
-func (t *Text) Tokens() iter.Iter {
-	return newTextTokenIter(t)
-}
-
-// Render a text stream using a TokenRenderer and return the combined result
-func (t *Text) Render(renderer TokenRenderer) (string, error) {
-
-	// First render each token as a styled block and combine the result
-	tokens := newTextTokenIter(t)
-	var iterErr error = nil
-	var val interface{} = nil
-	var combined = ""
-	for val, iterErr = tokens.Next(); iterErr == nil; val, iterErr = tokens.Next() {
-		styled, err := renderer.AsString(val.(TextToken))
-		if err != nil {
-			return "", err
-		}
-		combined += styled
-	}
-	if !errors.Is(iterErr, iter.ErrEndIteration{}) {
-		return "", iterErr
+// Resolve returns the renderer string for the given key.
+// If a classifier is provided it is used.
+func (t *Text) Resolve(name string, renderer Renderer, classifier ...parser.Classifier) (string, error) {
+	value, ok := t.literals[name]
+	if !ok {
+		return "", errors.Fail(ErrBadName{}, nil, fmt.Sprintf("No match for %s in text", name))
 	}
 
-	return combined, nil
+	var classic parser.Classifier
+	if len(classifier) > 0 {
+		classic = classifier[0]
+	} else {
+		classic = &NoOpClassifier{}
+	}
+
+	var tokens *parser.Tokens
+	var rerr error
+	wg := &sync.WaitGroup{}
+	wg.Add(1)
+	go (func() {
+		parser.Parse(t.getTokenizer(), classic, func(handler func(data string, finished bool)) {
+			handler(value, true)
+		}).Then(func(v *parser.Tokens) {
+			tokens = v
+			wg.Done()
+		}, func(e error) {
+			rerr = e
+			wg.Done()
+		})
+	})()
+	wg.Wait()
+	if rerr != nil {
+		return "", rerr
+	}
+
+	return renderer.Render(tokens)
+}
+
+func (t *Text) getTokenizer() parser.Tokenizer {
+	if t.tokenizer == nil {
+		t.tokenizer = &wordTokenizer{}
+	}
+	return t.tokenizer
 }
